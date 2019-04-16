@@ -1,3 +1,7 @@
 [submodule "ramses"]
 	path = ramses
 	url = https://github.com/GENIVI/ramses
+
+[submodule "cxxopts"]
+	path = cxxopts
+	url = https://github.com/jarro2783/cxxopts.git
