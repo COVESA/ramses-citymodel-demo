@@ -171,7 +171,7 @@ void DisplayManager::goToTargetState(ramses::sceneId_t sceneId)
         case ESceneState_Mapped:
         case ESceneState_Rendered:
         {
-            assert(m_scenesMappingInfo.contains(sceneId));
+            assert(m_scenesMappingInfo.find(sceneId) != m_scenesMappingInfo.end());
             const MappingInfo& mapInfo = m_scenesMappingInfo[sceneId];
             // only subscribe, if display is created
             if (isDisplayCreated(mapInfo.display))
@@ -288,7 +288,7 @@ void DisplayManager::handleShowCommand(ramses::sceneId_t sceneId, MappingInfo ma
     case ESceneState_Rendered:
     case ESceneState_GoingToMapped:
     case ESceneState_GoingToRendered:
-        assert(m_scenesMappingInfo.contains(sceneId));
+        assert(m_scenesMappingInfo.find(sceneId) != m_scenesMappingInfo.end());
         if (!(m_scenesMappingInfo[sceneId] == mappingInfo))
         {
             printf("DisplayManager::handleShowCommand: cannot execute show command for scene with id: %ld because it was mapped with different parameters before!\n", sceneId);
@@ -368,7 +368,8 @@ void DisplayManager::handleHideCommand(ramses::sceneId_t sceneId)
 /* IRendererEventHandler handlers */
 void DisplayManager::scenePublished(ramses::sceneId_t sceneId)
 {
-    assert(!m_currentSceneStates.contains(sceneId) || m_currentSceneStates[sceneId] == ESceneState_GoingToPublished);
+    assert(m_scenesMappingInfo.find(sceneId) != m_scenesMappingInfo.end() ||
+           m_currentSceneStates[sceneId] == ESceneState_GoingToPublished);
 
     // update current scene state
     m_currentSceneStates[sceneId] = ESceneState_Published;
