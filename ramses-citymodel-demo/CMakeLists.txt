@@ -27,6 +27,7 @@ MACRO(INSTALL_RESOURCES files)
    
    set(targetName copy-files-${CMAKE_CURRENT_SOURCE_DIR})
    string(REPLACE "/" "-" targetName ${targetName})
+   string(REPLACE ":" "-" targetName ${targetName})
    add_custom_target(${targetName} ALL DEPENDS ${targetFiles})
    
    install(FILES ${targetFiles} DESTINATION bin/res)
