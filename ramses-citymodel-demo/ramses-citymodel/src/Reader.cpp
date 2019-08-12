@@ -600,7 +600,8 @@ Material* Reader::readMaterial(TileResourceContainer& resourceContainer)
         m_sceneLock.lock();
         sampler = m_citymodel.getRamsesScene().createTextureSampler(ramses::ETextureAddressMode_Repeat,
                                                                     ramses::ETextureAddressMode_Repeat,
-                                                                    ramses::ETextureSamplingMethod_Bilinear,
+                                                                    ramses::ETextureSamplingMethod_Linear_MipMapNearest,
+                                                                    ramses::ETextureSamplingMethod_Linear,
                                                                     *texture);
 
         const ramses::status_t stat = effect->findUniformInput("u_texture", input);
