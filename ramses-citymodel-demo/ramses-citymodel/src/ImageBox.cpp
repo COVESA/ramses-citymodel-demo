@@ -29,7 +29,8 @@ ImageBox::ImageBox(ramses::Texture2D&    texture,
 {
     ramses::TextureSampler* textureSampler = scene.createTextureSampler(ramses::ETextureAddressMode_Repeat,
                                                                         ramses::ETextureAddressMode_Repeat,
-                                                                        ramses::ETextureSamplingMethod_Bilinear,
+                                                                        ramses::ETextureSamplingMethod_Linear_MipMapNearest,
+                                                                        ramses::ETextureSamplingMethod_Linear,
                                                                         texture);
     init(textureSampler, blendMode, renderGroup, renderOrder, effect, parent);
 }
@@ -54,7 +55,8 @@ ImageBox::ImageBox(ramses::StreamTexture& texture,
 {
     ramses::TextureSampler* textureSampler = scene.createTextureSampler(ramses::ETextureAddressMode_Repeat,
                                                                         ramses::ETextureAddressMode_Repeat,
-                                                                        ramses::ETextureSamplingMethod_Bilinear,
+                                                                        ramses::ETextureSamplingMethod_Linear_MipMapNearest,
+                                                                        ramses::ETextureSamplingMethod_Linear,
                                                                         texture);
     init(textureSampler, blendMode, renderGroup, renderOrder, effect, parent);
 }

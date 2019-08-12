@@ -182,7 +182,7 @@ void LineContainer::createGeometry()
         appearance->setBlendingOperations(ramses::EBlendOperation_Add, ramses::EBlendOperation_Min);
         appearance->setColorWriteMask(false, false, false, true);
         appearance->setDepthFunction(ramses::EDepthFunc_Disabled);
-        appearance->setDepthWrite(false);
+        appearance->setDepthWrite(ramses::EDepthWrite_Disabled);
     }
 
     // Second pass : Render visible part
@@ -205,7 +205,7 @@ void LineContainer::createGeometry()
                                        ramses::EBlendFactor_Zero);
         appearance->setBlendingOperations(ramses::EBlendOperation_Add, ramses::EBlendOperation_Add);
         appearance->setDepthFunction(ramses::EDepthFunc_LessEqual);
-        appearance->setDepthWrite(false);
+        appearance->setDepthWrite(ramses::EDepthWrite_Disabled);
     }
 
 
@@ -229,7 +229,7 @@ void LineContainer::createGeometry()
                                        ramses::EBlendFactor_Zero);
         appearance->setBlendingOperations(ramses::EBlendOperation_Add, ramses::EBlendOperation_Add);
         appearance->setDepthFunction(ramses::EDepthFunc_GreaterEqual);
-        appearance->setDepthWrite(false);
+        appearance->setDepthWrite(ramses::EDepthWrite_Disabled);
     }
 }
 
