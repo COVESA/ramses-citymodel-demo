@@ -29,7 +29,7 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/ramses/renderer/RendererLib/ramses-renderer-api/include    
 )
 
-set(OpenCTM_DIR OpenCTM-1.0.3)
+set(OpenCTM_DIR OpenCTM)
 file(GLOB_RECURSE libsrc "${OpenCTM_DIR}/lib/*.c")
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/${OpenCTM_DIR}/lib

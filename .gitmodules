@@ -5,3 +5,7 @@
 [submodule "cxxopts"]
 	path = cxxopts
 	url = https://github.com/jarro2783/cxxopts.git
+
+[submodule "OpenCTM"]
+	path = OpenCTM
+	url = https://github.com/Danny02/OpenCTM.git
