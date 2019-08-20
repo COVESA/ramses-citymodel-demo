@@ -10,7 +10,6 @@
 #define RAMSES_CITYMODEL_CITYMODELARGUMENTS_H
 
 #include "cxxopts.hpp"
-#include "getopt.h"
 #include "stdint.h"
 #include "cstdlib"
 #include "string"
