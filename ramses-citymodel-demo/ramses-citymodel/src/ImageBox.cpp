@@ -201,13 +201,14 @@ void ImageBox::setCrop(int deltaLeft, int deltaRight, int deltaTop, int deltaBot
     const float top             = heightIncrement * static_cast<float>(static_cast<int>(m_height) - deltaTop);
     const float bottom          = heightIncrement * static_cast<float>(deltaBottom);
 
-    TextureCoordinates textureCoordsData({{ left,  bottom
+    TextureCoordinates textureCoordsData = { left,  bottom
                                          , right, bottom
                                          , left,  top
                                          , right, top
-                                         }});
-    if(m_flipVertical) flipTextureCoordinates(textureCoordsData);
-    m_textureCoords->setData(reinterpret_cast<const char*>(textureCoordsData.begin()), TextureCoordinatesSizeInBytes);
+                                         };
+    if(m_flipVertical)
+        flipTextureCoordinates(textureCoordsData);
+    m_textureCoords->setData(reinterpret_cast<const char*>(textureCoordsData.data()), TextureCoordinatesSizeInBytes);
 }
 
 void ImageBox::flipTextureCoordinates(TextureCoordinates& textureCoordinates)
