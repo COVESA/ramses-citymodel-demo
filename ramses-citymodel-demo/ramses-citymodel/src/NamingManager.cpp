@@ -20,6 +20,7 @@
 #include "ramses-client-api/RenderGroup.h"
 
 #include "math.h"
+#include <algorithm>
 
 NamingManager::NamingManager(ramses::RamsesClient& client,
                              ramses::Scene&        scene,
