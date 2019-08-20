@@ -11,18 +11,18 @@
 
 float Math::Deg2Rad(float degrees)
 {
-    constexpr float f = 4.0 * atan(1.0) / 180.0;
+    float f = 4.0 * atan(1.0) / 180.0;
     return degrees * f;
 }
 
 float Math::Rad2Deg(float rad)
 {
-    constexpr float f = 180.0 / (4.0 * atan(1.0));
+    float f = 180.0 / (4.0 * atan(1.0));
     return rad * f;
 }
 
 float Math::Pi()
 {
-    constexpr float pi = atan(1.0f)*4.0f;
+    float pi = atan(1.0f)*4.0f;
     return pi;
 }
