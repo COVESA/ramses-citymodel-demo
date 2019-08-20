@@ -35,6 +35,7 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/${OpenCTM_DIR}/lib
     ${CMAKE_CURRENT_SOURCE_DIR}/${OpenCTM_DIR}/lib/liblzma)
 add_library(OpenCTM ${libsrc})
+target_compile_definitions(OpenCTM PUBLIC OPENCTM_STATIC)
 
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/cxxopts/include)
